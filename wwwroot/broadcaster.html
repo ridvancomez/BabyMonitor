@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bebek Kamerası</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="theme-color" content="#3b6ea8">
+</head>
+<body>
+  <main class="page">
+    <a class="back" href="index.html">‹ Geri</a>
+    <h1>Bebek Kamerası</h1>
+
+    <p id="status" class="status">Yayın başlatılmadı.</p>
+
+    <div class="video-frame">
+      <!-- Yerel önizleme sessiz: yankı olmasın. -->
+      <video id="preview" autoplay playsinline muted></video>
+    </div>
+
+    <p class="stat">Bağlı izleyici: <strong id="viewerCount">0</strong></p>
+
+    <button id="startButton" class="button button-primary" type="button">Yayını Başlat</button>
+
+    <div id="liveControls" class="button-row" hidden>
+      <button id="flipButton" class="button" type="button">Kamerayı Çevir</button>
+      <button id="stopButton" class="button button-danger" type="button">Yayını Durdur</button>
+    </div>
+
+    <p class="notice">
+      Yayın sırasında ekranı kilitleme ve başka uygulamaya geçme: telefon kamerayı kapatır ve yayın durur.
+      Telefonu şarja tak.
+    </p>
+  </main>
+
+  <script src="lib/signalr/signalr.min.js"></script>
+  <script type="module" src="js/broadcaster.js"></script>
+</body>
+</html>

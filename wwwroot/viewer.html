@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>İzle</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="theme-color" content="#3b6ea8">
+</head>
+<body>
+  <main class="page">
+    <a class="back" href="index.html">‹ Geri</a>
+    <h1>İzle</h1>
+
+    <p id="status" class="status">Sunucuya bağlanılıyor…</p>
+
+    <div class="video-frame">
+      <!-- Hep muted: ses Web Audio ile (yükseltilerek) çalar. Stream yine de bu elemana bağlı kalmalı (Chrome). -->
+      <video id="remoteVideo" autoplay playsinline muted></video>
+    </div>
+
+    <button id="unmuteButton" class="button button-primary" type="button" hidden>Sesi Aç</button>
+
+    <div id="gainControl" class="gain-control">
+      <label for="gainSlider">Ses yükseltme: <strong id="gainValue">2x</strong></label>
+      <input id="gainSlider" type="range" min="1" max="5" step="0.5" value="2">
+    </div>
+  </main>
+
+  <script src="lib/signalr/signalr.min.js"></script>
+  <script type="module" src="js/viewer.js"></script>
+</body>
+</html>

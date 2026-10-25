@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>ba98669c-3ecb-46f5-a10e-cedaf33d3e24</UserSecretsId>
+    <!-- Publish çıktısı proje klasöründe; tekrar derlemeye girmesin. -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);publish\**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Gerçek yerel ayarlar (PIN, sertifika parolası) hiçbir çıktıya kopyalanmaz. -->
+    <Content Update="appsettings.Local.json" CopyToOutputDirectory="Never" CopyToPublishDirectory="Never" />
+    <!-- Laptopta gerekmez. -->
+    <Content Update="appsettings.Development.json" CopyToPublishDirectory="Never" />
+    <!-- Tek exe'ye gömülmez; exe'nin yanında düzenlenebilir dosya olarak kalır. -->
+    <Content Update="appsettings.json" ExcludeFromSingleFile="true" />
+    <Content Update="appsettings.Local.example.json" CopyToOutputDirectory="Never" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <!-- Kurulum belgesi ve scriptler publish klasörünün köküne. -->
+    <None Update="deploy\*" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" Link="%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

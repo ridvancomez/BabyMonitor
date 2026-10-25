@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PIN — Bebek Monitörü</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="theme-color" content="#3b6ea8">
+</head>
+<body>
+  <main class="page">
+    <h1>Bebek Monitörü</h1>
+    <p class="hint">Devam etmek için PIN'i gir. Bu cihaz 90 gün hatırlanır.</p>
+
+    <form id="pinForm" class="pin-form">
+      <label for="pinInput">PIN</label>
+      <input id="pinInput" name="pin" type="password" autocomplete="current-password" required autofocus>
+      <button id="submitButton" class="button button-primary" type="submit">Giriş</button>
+    </form>
+
+    <p id="status" class="status" hidden></p>
+  </main>
+
+  <script type="module" src="js/pin.js"></script>
+</body>
+</html>

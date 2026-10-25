@@ -1,0 +1,18 @@
+bin/
+obj/
+publish/
+
+# Gerçek yerel ayarlar (PIN, sertifika parolası) — sadece appsettings.Local.example.json repoya girer.
+appsettings.Local.json
+
+# Dışa aktarılmış sertifikalar (özel anahtar içerir).
+*.pfx
+.vs/
+.idea/
+.vscode/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+*.rar
+*.zip
